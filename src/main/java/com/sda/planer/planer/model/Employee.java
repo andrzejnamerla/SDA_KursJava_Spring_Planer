@@ -26,4 +26,9 @@ public class Employee {
 
     @Enumerated(EnumType.STRING)
     private DepartmentEnum department;
+
+    /*TODO
+    public String getFormatedDepartment(){
+        return department;
+    }*/
 }
