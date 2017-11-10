@@ -3,10 +3,7 @@ package com.sda.planer.planer.model;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -26,12 +23,15 @@ public class Meeting {
 
     private String description;
 
+    @ManyToOne
     private Room room;
 
+    @ManyToMany
     private List<Employee> attendees;
 
+    @ManyToOne
     private Employee owner;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDate date;
 }

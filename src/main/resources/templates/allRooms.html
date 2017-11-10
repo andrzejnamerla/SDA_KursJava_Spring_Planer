@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Employees List</title>
+    <title>Rooms List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -76,31 +76,17 @@
     <div class="row content">
         <div class="col-sm-3 sidenav">
 
-            <form action="/employees" method="post">
+            <form action="/rooms" method="post">
+
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Input...">
+                    <label for="name">Room Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Input...">
                 </div>
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Input...">
+                    <label for="capacity">Room capacity</label>
+                    <input type="text" class="form-control" name="capacity" id="capacity" placeholder="Input...">
                 </div>
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Input...">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Input...">
-                </div>
-                <div class="form-group">
-                    <label for="department">Department</label>
-                    <select name="department" id="department" class="form-control">
-                        <option value="BACKEND">Backend</option>
-                        <option value="FRONTEND">Frontend</option>
-                        <option value="HR">HR</option>
-                    </select>
-                </div>
+
                 <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -109,13 +95,13 @@
 
         <div class="col-sm-8 text-left">
 
-            <h1>Employees List</h1>
-            <div class="list-group" th:each="employee : ${employees}">
+            <h1>Rooms List</h1>
+            <div class="list-group" th:each="room : ${rooms}">
                 <a href="#"
-                   th:href="'/employees/' + ${employee.id}"
-                   th:text="${employee.firstName} + ', ' + ${employee.lastName} + ', ' + ${employee.department}"
+                   th:href="'/rooms/' + ${room.id}"
+                   th:text="${room.name} + ', ' + ${room.capacity}"
                    class="list-group-item">
-                    employee 1
+                    room 1
                 </a>
             </div>
 

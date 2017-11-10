@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="/employees">Employees</a></li>
-                <li><a href="/employee">Employee</a></li>
+                <li><a href="/rooms">Rooms</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -80,15 +80,19 @@
         </div>
 
         <div class="col-sm-8 text-left">
-
-            <h6 th:text="${employee.formatedDepartment}">Backend</h6>
-            <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Jan Kowalski</h1>
-            <p>
-                <span th:text="'Telephone ' + ${employee.phoneNUmber}">Telephone: 0700</span>
-                <span th:text="'Email ' + ${employee.email}">Mail: cos@tam</span>
-            </p>
+            <div th:if="${employee} != null">
+                <h6 th:text="${employee.formatedDepartment}">Backend</h6>
+                <h1 th:text="${employee.firstName} + ' ' + ${employee.lastName}">Jan Kowalski</h1>
+                <p>
+                    <span th:text="'Telephone ' + ${employee.phoneNumber}">Telephone: 0700</span>
+                    <span th:text="'Email ' + ${employee.email}">Mail: cos@tam</span>
+                </p>
+            </div>
+            <div th:unless="${employee} != null">
+                <br>
+                There's no employees with that number!
+            </div>
             <br>
-
             <a href="/employees">Back</a>
         </div>
     </div>

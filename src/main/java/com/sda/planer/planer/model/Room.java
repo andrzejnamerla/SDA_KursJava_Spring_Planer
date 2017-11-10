@@ -22,5 +22,5 @@ public class Room {
 
     private String name;
 
-    private Long capasity;
+    private Long capacity;
 }
