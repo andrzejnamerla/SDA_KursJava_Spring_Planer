@@ -4,6 +4,7 @@ import lombok.*;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,6 +28,9 @@ public class Employee {
 
     @Enumerated(EnumType.STRING)
     private DepartmentEnum department;
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "attendees")
+    private List<Meeting> meetings;
 
     public String getFormatedDepartment(){
         return StringUtils.capitalize(department.toString().toLowerCase());
