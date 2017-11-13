@@ -1,3 +1,4 @@
+
 /*
 INSERT INTO employee (id, department, email, first_name, last_name, phone_number) VALUES (null, 'BACKEND', 'nowszy94@gmail.com', 'Szymon', 'Nowak', '785419047');
 INSERT INTO employee (id, department, email, first_name, last_name, phone_number) VALUES (null, 'BACKEND', 'jan.kowalski@gmail.com', 'Jan', 'Kowalski', '823472938');
